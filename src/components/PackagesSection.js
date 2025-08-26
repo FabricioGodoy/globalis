@@ -22,7 +22,7 @@ const PackagesSection = () => {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.3 }}
           className="text-4xl font-extrabold text-center text-gray-800 mb-12"
         >
           Nuestros <span className="text-blue-600">Paquetes</span>

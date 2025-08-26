@@ -31,7 +31,7 @@ const ContactSection = () => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6, // Duración ajustada
+        duration: 0.4, // Duración ajustada
         when: "beforeChildren",
         staggerChildren: 0.15 // Stagger ajustado
       }
@@ -40,7 +40,7 @@ const ContactSection = () => {
  
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }, // Duración ajustada
+    visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeOut" } }, // Duración ajustada
   };
  
   return (

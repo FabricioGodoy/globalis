@@ -18,7 +18,7 @@ const AboutSection = () => {
  
   const itemVariants = {
     hidden: { opacity: 0, y: 30 }, // Y ajustado
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }, // Duración ajustada
+    visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeOut" } }, // Duración ajustada
   };
  
   return (

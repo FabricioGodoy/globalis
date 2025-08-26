@@ -8,7 +8,7 @@ const PackageCard = ({ pkg, onSelectPackage }) => {
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.3 }}
       className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition-shadow duration-300 cursor-pointer"
       onClick={() => onSelectPackage(pkg)}
     >
