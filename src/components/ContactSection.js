@@ -77,15 +77,15 @@ const ContactSection = () => {
             <div className="space-y-4">
               <motion.div variants={itemVariants} className="flex items-center text-gray-700">
                 <Mail size={24} className="mr-4 text-blue-500" />
-                <span>info@globalis.com</span>
+                <span>santi_elmejor95@hotmail.com</span>
               </motion.div>
               <motion.div variants={itemVariants} className="flex items-center text-gray-700">
                 <Phone size={24} className="mr-4 text-purple-500" />
-                <span>+1 (555) 123-4567</span>
+                <span>+54 (261) 532 7815</span>
               </motion.div>
               <motion.div variants={itemVariants} className="flex items-center text-gray-700">
                 <MapPin size={24} className="mr-4 text-pink-500" />
-                <span>Av. Siempre Viva 742, Springfield</span>
+                <span>Donde el puchero se cocina a los balazos</span>
               </motion.div>
             </div>
           </motion.div>

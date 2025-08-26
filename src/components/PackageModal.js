@@ -1,13 +1,25 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-// Asegúrate de que todas las importaciones de lucide-react estén correctas
-import { X, MapPin, Clock, DollarSign, CheckCircle, Whatsapp } from 'lucide-react'; 
- 
+import { X, MapPin, Clock, DollarSign, CheckCircle } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
+import { WHATSAPP_PHONE } from '../config';
+
+const buildWhatsAppLink = (message = '', phone) => {
+  // phone: en formato internacional sin + ni 0 ni 15. Ej AR: 54911XXXXXXXX
+  const digits = (phone || '').replace(/\D/g, '');
+  const base = digits ? `https://wa.me/${digits}` : 'https://wa.me/';
+  const params = new URLSearchParams({ text: message });
+  return `${base}?${params.toString()}`;
+};
+
 const PackageModal = ({ pkg, onClose }) => {
   if (!pkg) return null;
- 
-  const whatsappLink = `https://wa.me/?text=${encodeURIComponent(pkg.whatsappMessage)}`;
- 
+
+const whatsappLink = buildWhatsAppLink(
+  pkg.whatsappMessage || `Hola! Me interesa el paquete: ${pkg.name}`,
+  pkg.whatsappPhone || WHATSAPP_PHONE
+);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -20,9 +32,9 @@ const PackageModal = ({ pkg, onClose }) => {
         initial={{ y: 50, opacity: 0, scale: 0.9 }}
         animate={{ y: 0, opacity: 1, scale: 1 }}
         exit={{ y: 50, opacity: 0, scale: 0.9 }}
-        transition={{ type: "spring", damping: 20, stiffness: 300 }}
+        transition={{ type: 'spring', damping: 20, stiffness: 300 }}
         className="bg-white rounded-2xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto relative"
-        onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
+        onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
@@ -30,7 +42,7 @@ const PackageModal = ({ pkg, onClose }) => {
         >
           <X size={24} />
         </button>
- 
+
         <div className="relative h-64 md:h-80 overflow-hidden rounded-t-2xl">
           <img src={pkg.image} alt={pkg.name} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
@@ -38,10 +50,10 @@ const PackageModal = ({ pkg, onClose }) => {
             {pkg.name}
           </h2>
         </div>
- 
+
         <div className="p-6 md:p-8">
           <p className="text-gray-700 text-lg mb-6 leading-relaxed">{pkg.longDescription}</p>
- 
+
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
             <div className="flex items-center text-gray-600">
               <MapPin size={20} className="mr-3 text-blue-500" />
@@ -56,7 +68,7 @@ const PackageModal = ({ pkg, onClose }) => {
               <span className="font-semibold">Precio:</span> Desde ${pkg.price}
             </div>
           </div>
- 
+
           <h3 className="text-xl font-bold text-gray-800 mb-3">Incluye:</h3>
           <ul className="list-none space-y-2 mb-8">
             {pkg.includes.map((item, index) => (
@@ -66,7 +78,7 @@ const PackageModal = ({ pkg, onClose }) => {
               </li>
             ))}
           </ul>
- 
+
           <motion.a
             href={whatsappLink}
             target="_blank"
@@ -75,7 +87,7 @@ const PackageModal = ({ pkg, onClose }) => {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            <Whatsapp size={24} className="mr-3" />
+            <FaWhatsapp size={22} className="mr-3" />
             Consultar por WhatsApp
           </motion.a>
         </div>
@@ -83,5 +95,5 @@ const PackageModal = ({ pkg, onClose }) => {
     </motion.div>
   );
 };
- 
+
 export default PackageModal;
