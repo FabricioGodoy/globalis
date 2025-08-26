@@ -35,7 +35,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <a href="#" className="flex items-center gap-2">
           {/* Cambiamos la ruta de la imagen para que apunte a la carpeta public directamente */}
-          <img src={`${process.env.PUBLIC_URL}/img/logos/png/PNGlogoNaranja_textNaranja.png`} alt="Globalis Loooooogo" className="h-12 w-auto logoNavBar" /> 
+          <img src={`${process.env.PUBLIC_URL}/img/logos/png/PNGlogoNaranja_textNaranja.png`} alt="Globalis Loooooogo" className="logoNavBar" /> 
           <span className="text-2xl font-bold text-gray-800">Globalis</span>
         </a>
  

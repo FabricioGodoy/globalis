@@ -5,4 +5,6 @@
 
 .logoNavBar{
     border-radius: 20%;
+    height: 10vh;
+    width: auto;
 }
