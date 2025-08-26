@@ -36,13 +36,28 @@ const AboutSection = () => {
           className="text-4xl font-extrabold text-center text-gray-800 mb-12"
         >
           Sobre <span className="text-blue-600">Globalis</span>
+
         </motion.h2>
+        
  
         <motion.p
           variants={itemVariants}
-          className="text-lg text-gray-600 text-center max-w-2xl mx-auto mb-16 leading-relaxed"
-        >
-          En Globalis, creemos que cada viaje es una historia esperando ser contada. Desde 2005, hemos estado creando experiencias de viaje inolvidables, conectando a nuestros clientes con los destinos de sus sueños.
+          className="mx-auto max-w-[72ch] text-gray-700 text-lg md:text-xl leading-7 md:leading-8 mb-12 text-center px-4 md:px-0 space-y-6">
+
+          <span>
+            En GLOBALIS Viajes creemos que cada viaje es mucho más que un destino: es un sueño por cumplir. Nuestra razón de ser es acompañar a cada persona en recorrido, brindando atención personalizada y trabajando en conjunto para diseñar experiencias que superen expectativas y hagan realidad lo que tanto desean.
+          </span>
+          
+          <br/>
+          <br/>
+          <span>
+            Nuestra prioridad es generar confianza, tranquilidad y seguridad, para que cada experiencia sea única e irrepetible. Con una identidad renovada, nos proyectamos como una agencia moderna, cercana y dinámica, pero siempre con el mismo compromiso: transformar cada viaje en un recuerdo inolvidable.
+          </span>
+          <br/>
+          <br/>
+          <span>
+            Sigamos soñando juntos. Sigamos viajando.
+          </span>
         </motion.p>
  
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">

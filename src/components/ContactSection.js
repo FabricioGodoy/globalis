@@ -52,7 +52,7 @@ const ContactSection = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
     >
-      <div className="container mx-auto px-4 max-w-4xl">
+      {/* <div className="container mx-auto px-4 max-w-4xl">
         <motion.h2
           variants={itemVariants}
           className="text-4xl font-extrabold text-center text-gray-800 mb-12"
@@ -151,7 +151,12 @@ const ContactSection = () => {
             </motion.button>
           </motion.form>
         </motion.div>
-      </div>
+      </div> */}
+
+
+      <a href="https://wa.me/+5492615327815" className="btn-flotante" target="_blank" rel="noopener noreferrer">
+        <img src="https://img.icons8.com/office/40/whatsapp--v1.png" alt="wpp"></img>
+      </a>
     </section>
   );
 };
