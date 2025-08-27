@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  scrollbar-width: none;
+}
 
 .logoNavBar{
     border-radius: 20%;
