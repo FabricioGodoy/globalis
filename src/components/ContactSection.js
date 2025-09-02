@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin } from 'lucide-react';
+const phone = '5492612131392'; // sin +, correcto para AR
+const defaultMsg = 'Hola! Quiero averiguar por los paquetes de viaje. ¿Me pasan info?';
+
  
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -154,9 +157,13 @@ const ContactSection = () => {
       </div> */}
 
 
-      <a href="https://wa.me/+5492615327815" className="btn-flotante" target="_blank" rel="noopener noreferrer">
+  {/*     <a href="https://wa.me/+5492612131392" className="btn-flotante" target="_blank" rel="noopener noreferrer">
         <img src="https://img.icons8.com/office/40/whatsapp--v1.png" alt="wpp"></img>
-      </a>
+      </a> */}
+
+
+
+
     </section>
   );
 };

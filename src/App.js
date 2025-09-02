@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import AboutSection from './components/AboutSection';
 import PackagesSection from './components/PackagesSection';
-import ContactSection from './components/ContactSection';
+/* import ContactSection from './components/ContactSection'; */
 import Footer from './components/Footer';
  
 export default function App() {
@@ -12,7 +12,7 @@ export default function App() {
       <main className="pt-20"> {/* Add padding-top to account for fixed navbar */}
         <AboutSection />
         <PackagesSection />
-        <ContactSection />
+        {/* <ContactSection /> */}
       </main>
       <Footer />
     </div>

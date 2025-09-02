@@ -11,6 +11,11 @@
     height: 10vh;
     width: auto;
 }
+.logoFooter{
+    border-radius: 20%;
+    height: 13vh;
+    width: auto;
+}
 
 /* === Botón WhatsApp flotante === */
 .btn-flotante {

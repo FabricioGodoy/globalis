@@ -1,92 +1,94 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-// Importaciones específicas de react-icons
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa'; 
- 
+import React from "react";
+import { motion } from "framer-motion";
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+
+// Paleta
+const COLORS = {
+  midnight: "#0d112d",
+  navy: "#002155",
+  gold: "#d2983a",
+  sand: "#ede5da",
+};
+
 const Footer = () => {
   const footerVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.4, // Duración ajustada
-        when: "beforeChildren",
-        staggerChildren: 0.15 // Stagger ajustado
-      }
+      transition: { duration: 0.4, when: "beforeChildren", staggerChildren: 0.15 },
     },
   };
- 
+
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeOut" } }, // Duración ajustada
+    visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeOut" } },
   };
- 
+
+  const Social = ({ href, label, children }) => (
+    <motion.a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={label}
+      className="inline-flex h-11 w-11 items-center justify-center rounded-full border text-[#ede5da]/80 border-white/10 hover:text-[#d2983a] hover:border-[#d2983a]/60 hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-[#d2983a]/60"
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.94 }}
+    >
+      {children}
+    </motion.a>
+  );
+
   return (
     <motion.footer
-      className="bg-gray-800 text-white py-12"
+      className="border-t [border-top-color:rgba(210,152,58,0.35)] bg-gradient-to-b from-[#0d112d] to-[#002155] text-[#ede5da]"
       variants={footerVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
     >
-      <div className="container mx-auto px-4 text-center">
-        <motion.div variants={itemVariants} className="mb-8">
-          <h3 className="text-3xl font-bold mb-4">Globalis</h3>
-          <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Tu pasaporte a las aventuras más increíbles. En Globalis, convertimos tus sueños de viaje en realidad, ofreciéndote experiencias únicas y memorables alrededor del mundo.
+      <div className="container mx-auto px-4 py-12 text-center">
+        {/* Marca + descripción */}
+        <motion.div variants={itemVariants} className="mb-8 flex flex-col items-center">
+          <img
+            src={`${process.env.PUBLIC_URL}/img/logos/png/PNGlogoNaranja_textNaranja.png`}
+            alt="Globalis Logo"
+            className="logoFooter mb-4 select-none"
+          />
+          <h3 className="sr-only">Globalis</h3>
+          <p className="text-[#ede5da]/80 max-w-2xl leading-relaxed">
+            Tu pasaporte a las aventuras más increíbles. En Globalis convertimos tus sueños de viaje en realidad, con experiencias únicas y memorables alrededor del mundo.
           </p>
         </motion.div>
- 
-        <motion.div variants={itemVariants} className="flex justify-center space-x-6 mb-8">
-          <motion.a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-blue-500 transition-colors duration-300"
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <FaFacebookF size={28} />
-          </motion.a>
-          <motion.a
-            href="https://twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <FaTwitter size={28} />
-          </motion.a>
-          <motion.a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-pink-500 transition-colors duration-300"
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <FaInstagram size={28} />
-          </motion.a>
-          <motion.a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-blue-700 transition-colors duration-300"
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <FaLinkedinIn size={28} />
-          </motion.a>
+
+        {/* Iconos sociales */}
+        <motion.div variants={itemVariants} className="flex justify-center gap-4 mb-8">
+          <Social href="https://facebook.com" label="Facebook">
+            <FaFacebookF size={18} />
+          </Social>
+          <Social href="https://twitter.com" label="Twitter">
+            <FaTwitter size={18} />
+          </Social>
+          <Social href="https://instagram.com" label="Instagram">
+            <FaInstagram size={18} />
+          </Social>
+          <Social href="https://linkedin.com" label="LinkedIn">
+            <FaLinkedinIn size={18} />
+          </Social>
         </motion.div>
- 
-        <motion.p variants={itemVariants} className="text-gray-500 text-sm">
+
+        {/* Divider dorado */}
+        <motion.div variants={itemVariants} className="flex justify-center mb-4">
+          <span className="h-[2px] w-24 bg-[#d2983a] rounded-full opacity-80" />
+        </motion.div>
+
+        {/* Copyright */}
+        <motion.p variants={itemVariants} className="text-sm text-[#ede5da]/70">
           &copy; {new Date().getFullYear()} Globalis. Todos los derechos reservados.
         </motion.p>
       </div>
     </motion.footer>
   );
 };
- 
+
 export default Footer;
