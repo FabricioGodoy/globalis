@@ -7,6 +7,8 @@ import App from "./App";
 const root = createRoot(document.getElementById("root"));
 root.render(
   <StrictMode>
-    <App />
+   <MotionConfig reducedMotion="always" transition={{ duration: 0 }}>
+      <App />
+    </MotionConfig>
   </StrictMode>
 );
