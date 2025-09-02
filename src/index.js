@@ -1,6 +1,7 @@
 import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./styles.css";
+import { MotionConfig } from "framer-motion";
 
 import App from "./App";
 
