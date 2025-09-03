@@ -1,3 +1,4 @@
+
 import React from "react";
 import { motion } from "framer-motion";
 import { Globe, Users, Heart } from "lucide-react";
@@ -26,7 +27,7 @@ const AboutSection = () => {
   };
 
   const FeatureCard = ({ Icon, title, desc, delay = 0 }) => (
-    <motion.div
+    <div
       variants={itemVariants}
       transition={{ delay }}
       className="relative rounded-2xl p-8 bg-gradient-to-b from-[#002155]/95 to-[#0d112d]/95 text-[#ede5da] border border-white/10 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
@@ -37,11 +38,11 @@ const AboutSection = () => {
       </div>
       <h3 className="text-2xl font-bold mb-3 text-[#ede5da]">{title}</h3>
       <p className="text-[#ede5da]/80 leading-relaxed">{desc}</p>
-    </motion.div>
+    </div>
   );
 
   return (
-    <motion.section
+    <section
       id="about"
       className="relative py-20 overflow-hidden bg-gradient-to-br from-[#ede5da] via-white to-[#002155]/5"
       variants={sectionVariants}
@@ -54,7 +55,7 @@ const AboutSection = () => {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[#d2983a]/30" />
 
       <div className="container mx-auto px-4 max-w-5xl">
-        <motion.h2
+        <h2
           variants={itemVariants}
           className="text-4xl md:text-5xl font-extrabold text-center text-[#0d112d] mb-6"
         >
@@ -62,13 +63,13 @@ const AboutSection = () => {
           <span className="inline-flex items-center gap-2 px-3 py-1 text-[#d2983a]">
             Globalis
           </span>
-        </motion.h2>
+        </h2>
 
-        <motion.div variants={itemVariants} className="flex justify-center mb-10">
+        <div variants={itemVariants} className="flex justify-center mb-10">
           <span className="h-[2px] w-24 bg-[#d2983a] rounded-full" />
-        </motion.div>
+        </div>
 
-        <motion.p
+        <p
           variants={itemVariants}
           className="mx-auto max-w-[72ch] text-[#0d112d]/80 text-lg md:text-xl leading-7 md:leading-8 mb-14 text-center px-4 md:px-0"
         >
@@ -83,7 +84,7 @@ const AboutSection = () => {
           <br />
           <br />
           <span>Sigamos soñando juntos. Sigamos viajando.</span>
-        </motion.p>
+        </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           <FeatureCard
@@ -107,7 +108,7 @@ const AboutSection = () => {
         </div>
       </div>
       <a href="https://wa.me/+5492612131392" className="btn-flotante" target="_blank" rel="noopener noreferrer"> <img src="https://img.icons8.com/office/40/whatsapp--v1.png" alt="wpp"></img> </a>
-    </motion.section>
+    </section>
   );
 };
 

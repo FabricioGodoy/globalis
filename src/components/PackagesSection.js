@@ -19,7 +19,7 @@ const PackagesSection = () => {
   const handleCloseModal = () => setSelectedPackage(null);
 
   return (
-    <motion.section
+    <section
       id="packages"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -37,7 +37,7 @@ const PackagesSection = () => {
 
       <div className="container mx-auto px-4 max-w-6xl relative">
         {/* Título */}
-        <motion.h2
+        <h2
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
@@ -48,21 +48,21 @@ const PackagesSection = () => {
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-xl text-[#d2983a]">
             Paquetes
           </span>
-        </motion.h2>
+        </h2>
 
-        <motion.div
+        <div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.5 }}
           className="flex justify-center mb-12"
         >
           <span className="h-[2px] w-24 bg-[#d2983a] rounded-full" />
-        </motion.div>
+        </div>
 
         {/* Grid de paquetes */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {travelPackages.map((pkg) => (
-            <motion.div
+            <div
               key={pkg.id}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -70,7 +70,7 @@ const PackagesSection = () => {
               transition={{ duration: 0.35 }}
             >
               <PackageCard pkg={pkg} onSelectPackage={handleSelectPackage} />
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
@@ -81,7 +81,7 @@ const PackagesSection = () => {
           <PackageModal pkg={selectedPackage} onClose={handleCloseModal} />
         )}
       </AnimatePresence>
-    </motion.section>
+    </section>
   );
 };
 

@@ -26,7 +26,7 @@ const Footer = () => {
   };
 
   const Social = ({ href, label, children }) => (
-    <motion.a
+    <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
@@ -36,11 +36,11 @@ const Footer = () => {
       whileTap={{ scale: 0.94 }}
     >
       {children}
-    </motion.a>
+    </a>
   );
 
   return (
-    <motion.footer
+    <footer
       className="border-t [border-top-color:rgba(210,152,58,0.35)] bg-gradient-to-b from-[#0d112d] to-[#002155] text-[#ede5da]"
       variants={footerVariants}
       initial="hidden"
@@ -49,7 +49,7 @@ const Footer = () => {
     >
       <div className="container mx-auto px-4 py-12 text-center">
         {/* Marca + descripción */}
-        <motion.div variants={itemVariants} className="mb-8 flex flex-col items-center">
+        <div variants={itemVariants} className="mb-8 flex flex-col items-center">
           <img
             src={`${process.env.PUBLIC_URL}/img/logos/png/PNGlogoNaranja_textNaranja.png`}
             alt="Globalis Logo"
@@ -59,10 +59,10 @@ const Footer = () => {
           <p className="text-[#ede5da]/80 max-w-2xl leading-relaxed">
             Tu pasaporte a las aventuras más increíbles. En Globalis convertimos tus sueños de viaje en realidad, con experiencias únicas y memorables alrededor del mundo.
           </p>
-        </motion.div>
+        </div>
 
         {/* Iconos sociales */}
-        <motion.div variants={itemVariants} className="flex justify-center gap-4 mb-8">
+        <div variants={itemVariants} className="flex justify-center gap-4 mb-8">
           <Social href="https://facebook.com" label="Facebook">
             <FaFacebookF size={18} />
           </Social>
@@ -75,19 +75,19 @@ const Footer = () => {
           <Social href="https://linkedin.com" label="LinkedIn">
             <FaLinkedinIn size={18} />
           </Social>
-        </motion.div>
+        </div>
 
         {/* Divider dorado */}
-        <motion.div variants={itemVariants} className="flex justify-center mb-4">
+        <div variants={itemVariants} className="flex justify-center mb-4">
           <span className="h-[2px] w-24 bg-[#d2983a] rounded-full opacity-80" />
-        </motion.div>
+        </div>
 
         {/* Copyright */}
-        <motion.p variants={itemVariants} className="text-sm text-[#ede5da]/70">
+        <p variants={itemVariants} className="text-sm text-[#ede5da]/70">
           &copy; {new Date().getFullYear()} Globalis. Todos los derechos reservados.
-        </motion.p>
+        </p>
       </div>
-    </motion.footer>
+    </footer>
   );
 };
 

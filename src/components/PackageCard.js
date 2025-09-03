@@ -12,7 +12,7 @@ const COLORS = {
 
 const PackageCard = ({ pkg, onSelectPackage }) => {
   return (
-    <motion.div
+    <div
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.25 }}
@@ -62,7 +62,7 @@ const PackageCard = ({ pkg, onSelectPackage }) => {
         )}
 
         {/* CTA principal: Ver Detalles (abre modal) */}
-        <motion.button
+        <button
           type="button"
           aria-label={`Ver detalles de ${pkg.name}`}
           whileHover={{ scale: 1.02 }}
@@ -74,9 +74,9 @@ const PackageCard = ({ pkg, onSelectPackage }) => {
           className="mt-4 w-full inline-flex items-center justify-center gap-2 rounded-xl px-4 py-3 font-semibold text-[#0d112d] bg-[#d2983a] hover:bg-[#c68a2f] active:bg-[#b87f2c] focus:outline-none focus:ring-2 focus:ring-[#d2983a]/50 shadow-sm hover:shadow"
         >
           Ver Detalles
-        </motion.button>
+        </button>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

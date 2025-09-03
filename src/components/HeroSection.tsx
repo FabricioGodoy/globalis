@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { ChevronRight, Phone, Package, Star } from "lucide-react";
+import { ChevronRight, Phone, Package, Star, HeartIcon } from "lucide-react";
 import { WHATSAPP_PHONE } from "../config";
 
 // Paleta (misma que venimos usando)
@@ -54,6 +54,10 @@ export default function Hero({
       className="relative isolate overflow-hidden"
       style={{
         background: `radial-gradient(1200px 600px at 10% -10%, ${COLORS.navy} 0%, ${COLORS.midnight} 60%)`,
+        border: `12px solid rgba(237,229,218,0.24)`, 
+        borderRadius: 200 , 
+        margin: "5vh 10px 30px 10px",
+        height: "85vh",
       }}
     >
       {/* Fondo opcional con imagen + velo */}

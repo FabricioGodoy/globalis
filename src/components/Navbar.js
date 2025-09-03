@@ -19,7 +19,7 @@ const Navbar = () => {
   const navItems = [
     { name: "Nosotros", href: "#about" },
     { name: "Paquetes", href: "#packages" },
-    { name: "Contacto", href: "#contact" },
+   /*  { name: "Contacto", href: "#contact" }, */
   ];
 
   const toggleMenu = () => setIsOpen((v) => !v);
@@ -56,9 +56,9 @@ const Navbar = () => {
         <a href="#" className="flex items-center gap-3">
           {/* Asegurate de que la ruta apunte a /public */}
           <img
-            src={`${process.env.PUBLIC_URL}/img/logos/png/PNGlogoNaranja_textNaranja.png`}
+            src={`${process.env.PUBLIC_URL}/img/logos/png/logomaxi.png`}
             alt="Globalis Logo"
-            className="logoNavBar h-15 w-auto select-none"
+            className="logoNavBar h-auto w-auto select-none"
           />
         </a>
 
