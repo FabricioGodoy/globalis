@@ -58,7 +58,7 @@ const Navbar = () => {
           <img
             src={`${process.env.PUBLIC_URL}/img/logos/png/logomaxi.png`}
             alt="Globalis Logo"
-            className="logoNavBar h-auto w-auto select-none"
+            className="logoNavBar h-10vh w-auto select-none"
           />
         </a>
 
